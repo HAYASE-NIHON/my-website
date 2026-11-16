@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>早勢颯馬の自己紹介</title>
+  <style>
+    /* 基本設定：画面幅からはみ出さないようにする */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      /* どぎつい原色の虹色グラデーション背景 */
+      background: linear-gradient(
+        180deg,
+        #ff0000 0%,
+        #ff8000 16%,
+        #ffff00 33%,
+        #00ff00 50%,
+        #00ffff 66%,
+        #0000ff 83%,
+        #ff00ff 100%
+      );
+      /* ▼ 全体の基本の文字の色を変える場所 */
+      color: #ffffff;
+      line-height: 1.8;
+      overflow-wrap: break-word;
+    }
+
+    /* ヘッダー */
+    header {
+      background: repeating-linear-gradient(
+        45deg,
+        #ff0000,
+        #ff0000 20px,
+        #ffff00 20px,
+        #ffff00 40px,
+        #00ff00 40px,
+        #00ff00 60px,
+        #00ffff 60px,
+        #00ffff 80px,
+        #ff00ff 80px,
+        #ff00ff 100px
+      );
+      padding: 36px 16px;
+      text-align: center;
+      border-bottom: 6px solid #000000;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #000000;
+      border: 5px solid #ffff00;
+      padding: 24px 16px;
+      box-shadow: 8px 8px 0px #ff00ff;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      letter-spacing: 0.08em;
+      /* ▼ 名前の文字の色を変える場所 */
+      color: #00ffff;
+      text-shadow: 3px 3px 0px #ff0000;
+    }
+
+    .motto {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+      /* ▼ 伝えたいこと（キャッチコピー）の文字の色を変える場所 */
+      color: #ffff00;
+      text-shadow: 2px 2px 0px #ff00ff;
+    }
+
+    /* ページ内メニュー */
+    nav {
+      background-color: #000000;
+      border-bottom: 6px solid #00ff00;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-list {
+      list-style: none;
+      margin: 0 auto;
+      padding: 12px 12px;
+      max-width: 800px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 16px;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border: 3px solid #ffffff;
+      /* ▼ メニューの文字の色を変える場所 */
+      color: #000000;
+    }
+
+    .nav-list li:nth-child(1) a {
+      background-color: #ff0055;
+      color: #ffffff;
+    }
+
+    .nav-list li:nth-child(2) a {
+      background-color: #ffff00;
+      color: #000000;
+    }
+
+    .nav-list li:nth-child(3) a {
+      background-color: #00ffff;
+      color: #000000;
+    }
+
+    .nav-list a:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 800px;
+      width: 100%;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    section {
+      background-color: #000000;
+      padding: 24px 20px;
+      margin-bottom: 32px;
+      scroll-margin-top: 84px;
+    }
+
+    /* セクションごとのどぎついネオン枠・影 */
+    #about {
+      border: 6px solid #ff0055;
+      box-shadow: 8px 8px 0px #ffff00;
+    }
+
+    #learning {
+      border: 6px solid #00ff00;
+      box-shadow: 8px 8px 0px #00ffff;
+    }
+
+    #future {
+      border: 6px solid #ff00ff;
+      box-shadow: 8px 8px 0px #ff8000;
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      padding: 6px 12px;
+      /* ▼ セクション見出しの文字の色を変える場所 */
+      color: #000000;
+    }
+
+    #about h2 {
+      background-color: #ff0055;
+      color: #ffffff;
+    }
+
+    #learning h2 {
+      background-color: #00ff00;
+      color: #000000;
+    }
+
+    #future h2 {
+      background-color: #ff00ff;
+      color: #ffffff;
+    }
+
+    section p {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-list {
+      margin: 0;
+      padding-left: 24px;
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+
+    .item-list li {
+      margin-bottom: 8px;
+    }
+
+    .item-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 公式サイトリンクエリア */
+    .link-area {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .official-link {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff);
+      border: 5px solid #000000;
+      box-shadow: 6px 6px 0px #000000;
+      /* ▼ 公式サイトリンクボタンの文字の色を変える場所 */
+      color: #000000;
+    }
+
+    .official-link:hover {
+      background: #000000;
+      color: #ffff00;
+      border-color: #ffff00;
+    }
+
+    /* フッター */
+    footer {
+      background-color: #000000;
+      text-align: center;
+      padding: 20px 16px;
+      font-weight: bold;
+      border-top: 6px solid #ffff00;
+      /* ▼ フッターの文字の色を変える場所 */
+      color: #00ff00;
+    }
+
+    /* 狭い画面（スマートフォンなど）向けの調整 */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      .motto {
+        font-size: 1.05rem;
+      }
+
+      section {
+        padding: 18px 14px;
+        box-shadow: 5px 5px 0px #ffff00;
+      }
+
+      #learning {
+        box-shadow: 5px 5px 0px #00ffff;
+      }
+
+      #future {
+        box-shadow: 5px 5px 0px #ff8000;
+      }
+
+      section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>早勢颯馬</h1>
+      <p class="motto">人生は冒険や死んだらあかん</p>
+    </div>
+  </header>
+
+  <!-- ページ内メニュー -->
+  <nav aria-label="ページ内メニュー">
+    <ul class="nav-list">
+      <li><a href="#about">自己紹介</a></li>
+      <li><a href="#learning">今学んでいること</a></li>
+      <li><a href="#future">これからやってみたいこと</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 1. 自己紹介セクション -->
+    <section id="about">
+      <h2>自己紹介</h2>
+      <!-- ▼ 紹介文を変える場所（この<p>〜</p>の中の文章を書き換えます） -->
+      <p>高校2年生の時に文化祭代表を務め、ドーナツ販売を行いました。周囲に推薦されて引き受けたことがきっかけでした。そして、準備段階から代表としての目的意識を持ち、主体的に取り組みました。</p>
+      <p>課題となったのは、手頃で満足感のある価格設定と、混雑を防ぐ円滑な会計の両立です。そこで私は、お釣りの手間を減らしわかりやすい「200円均一」にすることを提案・実施しました。</p>
+      <p>その結果、スムーズな会計で多くのお客様に対応でき、2日間で1000個を売り上げて完売させることができました。</p>
+      <!-- ▲ 紹介文を変える場所ここまで -->
+    </section>
+
+    <!-- 2. 今学んでいることセクション -->
+    <section id="learning">
+      <h2>今学んでいること</h2>
+      <p>金持ちになる方法</p>
+    </section>
+
+    <!-- 3. これからやってみたいことセクション -->
+    <section id="future">
+      <h2>これからやってみたいこと</h2>
+      <ul class="item-list">
+        <li>株</li>
+        <li>ゲーム制作</li>
+      </ul>
+    </section>
+
+    <!-- 公式サイトへのリンク -->
+    <div class="link-area">
+      <a href="https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/569727" class="official-link" target="_blank" rel="noopener noreferrer">テンリン２</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>早勢颯馬</p>
+  </footer>
+
+</body>
+</html>
